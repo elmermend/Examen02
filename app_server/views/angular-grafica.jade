@@ -1,0 +1,12 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+  .row
+    div(ng-controller="angularGraficaCtrl")
+      div(border: 1px solid #ddd; fusioncharts width="600" height="400" type="column2d" dataSource="{{ myDataSource  }}")

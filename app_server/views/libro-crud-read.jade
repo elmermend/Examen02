@@ -1,0 +1,21 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+         small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        each libro in libros
+          .col-xs-12.list-group-item
+            h2= libro._id
+            h2= libro.titulo
+            h3= libro.paginas 
+            p.address= libro.autor
+    .col-xs-12.col-sm-4 
+      p.lead= sidebar
